@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<!-- ---------------------------- Ver Anuncios ----------------------------- -->
+<hr>
+
+<body>
+    <h2>Get Anuncios</h2>
+    <ul>
+        <li *ngFor="let anuncio of anuncios">
+            {{ anuncio.imagen }} - {{ anuncio.texto }} - {{anuncio.fechaInicio}} - {{anuncio.fechaFin}}
+        </li>
+    </ul>
+</body>
+<hr>
+<!-- -------------------------- Eliminar anuncios -------------------------- -->
+<h2>Delete Anuncios</h2>
+<div *ngFor="let anuncio of anuncios">
+    <h4>{{ anuncio.imagen }}</h4>
+    <p>{{ anuncio.texto }}</p>
+    <button (click)="deleteAnuncio(anuncio.idanuncio)">Eliminar</button>
+</div>
+<hr>
+<!-- ---------------------------- Crear Anuncio ---------------------------- -->
+<h2>Create Anuncios</h2>
+<form (ngSubmit)="crearAnuncio()">
+<!-- -------------------------------- Texto -------------------------------- -->
+    <div class="form-group">
+        <label for="titulo">Texto Para el Anuncio</label>
+        <input type="text" id="titulo" name="titulo" [(ngModel)]="nuevoAnuncio.texto" required>
+    </div>
+<!-- ------------------------------- imagen -------------------------------- -->
+    <div class="form-group">
+        <label for="descripcion">Descripción</label>
+        <input type="text" id="descripcion" name="descripcion" [(ngModel)]="nuevoAnuncio.imagen" required>
+    </div>
+<!-- ----------------------------- fechaInicio ----------------------------- -->
+<div class="form-group">
+    <label for="fechaInicio">FechaInicio</label>
+    <input type="date" id="fechaInicio" name="fechaInicio" [(ngModel)]="nuevoAnuncio.fechaInicio" required>
+</div>
+
+<!-- ------------------------------ fechaFin ------------------------------- -->
+<div class="form-group">
+    <label for="fechaFin">FechaFin</label>
+    <input type="date" id="fechaFin" name="fechaFin" [(ngModel)]="nuevoAnuncio.fechaFin" required>
+</div>
+
+    <button type="submit">Crear Anuncio</button>
+</form>
+
+</html>

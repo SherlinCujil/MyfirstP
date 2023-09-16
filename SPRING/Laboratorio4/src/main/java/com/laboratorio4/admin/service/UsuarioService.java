@@ -53,7 +53,7 @@ public class UsuarioService {
 	}
 	
 	
-	@GetMapping(path="/login")
+	@PostMapping(path="/login")
 	public Usuario login(@RequestBody Usuario usuario){
 	
      List<Usuario> ListaUsuarios=

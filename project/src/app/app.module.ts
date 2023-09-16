@@ -9,6 +9,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { BienvenidaComponent } from './bienvenida/bienvenida.component';
+import { AnuncioComponent } from './anuncio/anuncio.component';
 
 
 
@@ -19,7 +20,8 @@ import { BienvenidaComponent } from './bienvenida/bienvenida.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    BienvenidaComponent
+    BienvenidaComponent,
+    AnuncioComponent
   ],
   imports: [
     BrowserModule,

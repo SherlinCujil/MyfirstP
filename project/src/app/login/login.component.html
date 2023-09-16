@@ -1,19 +1,28 @@
-<br>
-<br>
-<form (ngSubmit)="login()" id="loginForm">
-    <input type="text" 
-    [(ngModel)]="usuario.correo" 
-    [ngModelOptions]="{standalone:true}"
-    placeholder="Correo"
-    required>
-    <br>
-    <br>
-    <input type="password" 
-    [(ngModel)]="usuario.password"  
-    [ngModelOptions]="{standalone:true}"
-    placeholder="Password"
-    required>
-    <br>
-    <br>
-    <input type="submit">
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Proyecto de Angular Progra 2</h1>
+    <form (ngSubmit)="login()" id="loginForm">
+        <input type="text" 
+        [(ngModel)]="usuario.correo" 
+        [ngModelOptions]="{standalone:true}"
+        placeholder="Correo"
+        required>
+        <br>
+        <br>
+        <input type="password" 
+        [(ngModel)]="usuario.password"  
+        [ngModelOptions]="{standalone:true}"
+        placeholder="Password"
+        required>
+        <br>
+        <br>
+        <input type="submit">
+    </form>
+</body>
+</html>

@@ -22,15 +22,6 @@ export class LoginComponent {
     }
   }
 
-  darBienvenida(usuario:any){
-    if(usuario){
-      location.href="/bienvenida"
-    }
-    else{
-      alert("Usuario o password invalidos.")
-    }
-  }
-
   servicioLogin(){
     let httpOptions = {
       headers : new HttpHeaders({
@@ -41,4 +32,14 @@ export class LoginComponent {
     ("http://localhost:8080/usuario/login",this.usuario,httpOptions);
   }
 
+  darBienvenida(usuario:any){
+    if(usuario){
+      location.href="/bienvenida"
+    }
+    else{
+      alert("Usuario o password invalidos.")
+    }
+  }
+
 }
+//correo@correo.com

@@ -48,6 +48,7 @@ crearAnuncio() {
     .subscribe(
       () => {
         this.nuevoAnuncio = {};
+        this.getAnuncios();
       },
       (error) => {
         console.error(error);

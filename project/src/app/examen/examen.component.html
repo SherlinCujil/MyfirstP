@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<!-- ---------------------------- Ver Examen ----------------------------- -->
+<hr>
+
+<body>
+    <h2>Get Examen</h2>
+    <ul>
+        <li *ngFor="let examen of examen">
+            {{examen.fecha_examen}} - {{examen.carnet}}
+        </li>
+        
+    </ul>
+</body>
+<hr>
+<!-- ---------------------------- Crear Examen ---------------------------- -->
+<h2>Create Examen</h2>
+<form (ngSubmit)="crearExamen()">
+    <!-- -------------------------------- Carnet -------------------------------- -->
+    <div class="form-group">
+        <label for="titulo">carnet</label>
+        <input type="texto" id="titulo" name="titulo" [(ngModel)]="nuevoExamen.texto" required>
+    </div>
+
+<!-- ----------------------------- fechaExamen ----------------------------- -->
+<div class="form-group">
+    <label for="fechaInicio">fechaExamen</label>
+    <input type="date" id="fechaInicio" name="fechaInicio" [(ngModel)]="nuevoExamen.fechaInicio" required>
+</div>
+
+
+    <button type="submit">Crear Examen</button>
+</form>
+<br><br><br>
+</html>

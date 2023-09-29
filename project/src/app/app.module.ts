@@ -10,6 +10,8 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { BienvenidaComponent } from './bienvenida/bienvenida.component';
 import { AnuncioComponent } from './anuncio/anuncio.component';
+import { ExamenComponent } from './examen/examen.component';
+import { CrearusuarioComponent } from './crearusuario/crearusuario.component';
 
 
 
@@ -21,7 +23,9 @@ import { AnuncioComponent } from './anuncio/anuncio.component';
     AppComponent,
     LoginComponent,
     BienvenidaComponent,
-    AnuncioComponent
+    AnuncioComponent,
+    ExamenComponent,
+    CrearusuarioComponent
   ],
   imports: [
     BrowserModule,

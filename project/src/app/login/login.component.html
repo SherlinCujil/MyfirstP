@@ -7,22 +7,27 @@
 </head>
 <body>
     <h1>Proyecto de Angular Progra 2</h1>
+
+   
     <form (ngSubmit)="login()" id="loginForm">
-        <input type="text" 
+        <label class="form-label">Email: *</label>
+        <input type="text" class="form-control tamano"
         [(ngModel)]="usuario.correo" 
         [ngModelOptions]="{standalone:true}"
         placeholder="Correo"
         required>
         <br>
         <br>
-        <input type="password" 
+        <label class="form-label">Password: *</label>
+        <input type="password" class="form-control" style="width: 100%;"
         [(ngModel)]="usuario.password"  
         [ngModelOptions]="{standalone:true}"
         placeholder="Password"
         required>
         <br>
         <br>
-        <input type="submit">
+        <input type="submit" class="btn btn-outline-primary float-end" value="Ingresar">
     </form>
 </body>
+
 </html>

@@ -22,24 +22,26 @@ export class LoginComponent {
     }
   }
 
-  servicioLogin(){
-    let httpOptions = {
-      headers : new HttpHeaders({
-        'Content-Type':'application/json'
-      })
-    }
-    return this.http.post<any>
-    ("http://localhost:8080/usuario/login",this.usuario,httpOptions);
-  }
 
   darBienvenida(usuario:any){
     if(usuario){
-      location.href="/bienvenida"
+      location.href="/bienvenida";
     }
     else{
-      alert("Usuario o password invalidos.")
+      alert("Usuario o password invalido.")
     }
   }
+  servicioLogin(){
+    let httpOptions ={
+      headers:new HttpHeaders({
+        'Content-Type':'application/json'
+      })
+  }
 
+  return this.http.post(
+    "http://localhost:8080/usuario/login",
+    this.usuario,
+    httpOptions);
+  }
 }
 //correo@correo.com

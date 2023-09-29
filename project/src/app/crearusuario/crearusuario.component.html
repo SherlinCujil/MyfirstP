@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<!-- ---------------------------- Ver Usuarios ----------------------------- -->
+<hr>
+
+<body>
+    <h2>Get Usuarios</h2>
+    <ul>
+        <li *ngFor="let usuario of usuarios">
+            {{ usuario.correo }} - {{ usuario.nombre }} - {{usuario.apellido}} - {{usuario.password}} -
+            {{usuario.telefono}}
+        </li>
+    </ul>
+</body>
+<hr>
+<!-- -------------------------- Eliminar Usuarios -------------------------- -->
+<h2>Delete Usuarios</h2>
+<div *ngFor="let usuario of usuarios">
+    <h4>{{ usuario.correo }}</h4>
+    <p>{{ usuario.password }}</p>
+    <button (click)="deleteUsuario(usuario.correo)">Eliminar</button>
+</div>
+<hr>
+<!-- ---------------------------- Crear Usuario ---------------------------- -->
+<h1> Crear usuario</h1>
+<hr>
+<button class="btn btn-outline-primary" (click)="limpiarFormulario()">Limpiar formulario</button>
+<form (ngSubmit)="crearUsuario()" id="usuarioForm">
+    <div class="mb-3">
+        <label class="form-label">correo: *</label>
+        <input type="text" class="form-control" [(ngModel)]="usuario.correo" [ngModelOptions]="{standalone:true}"
+            required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Password: *</label>
+        <input type="password" class="form-control" [(ngModel)]="usuario.password" [ngModelOptions]="{standalone:true}"
+            required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Nombre: *</label>
+        <input type="nombre" class="form-control" [(ngModel)]="usuario.nombre" [ngModelOptions]="{standalone:true}"
+            required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">apellido: *</label>
+        <input type="apellido" class="form-control" [(ngModel)]="usuario.apellido" [ngModelOptions]="{standalone:true}"
+            required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">telefono: *</label>
+        <input type="tel" class="form-control" [(ngModel)]="usuario.telefono" [ngModelOptions]="{standalone:true}"
+            required>
+        <!-- <select class="form-select" aria-label="Seleccione" [(ngModel)]="usuario.telefono"
+            [ngModelOptions]="{standalone:true}" required>
+            <option selected></option>
+            <option *ngFor="let telefono of telefonos" value="{{telefono.idtelefono}}">{{telefono.value}}</option>
+        </select> -->
+    </div>
+    <input type="submit" class="btn btn-outline-success float-end" value="Guardar">
+</form>
+<br>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Correo</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Password</th>
+            <th scope="col">Telefono</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let usuario of usuarios">
+            <th scope="row">{{usuario.correo}}</th>
+            <td>{{usuario.nombre}}</td>
+            <td>{{usuario.apellido}}</td>
+            <td>{{usuario.password}}</td>
+            <td>{{usuario.telefono}}</td>
+            <td><button class="btn btn-outline-primary" (click)="modificar(usuario)">Modificar</button>
+                &nbsp;
+                <button class="btn btn-outline-warning" (click)="eliminar(usuario.correo)">Eliminar</button>
+            </td>
+        </tr>
+
+    </tbody>
+</table>

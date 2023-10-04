@@ -12,8 +12,6 @@ export class CrearusuarioComponent {
   texto: string = '';
   usuarios:any = [];
   usuario:any = {};
-  estados:any = [];
-
   user: any[] = [];
   nuevoUser: any = {};
 

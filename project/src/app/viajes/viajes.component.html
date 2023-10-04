@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<!-- ---------------------------- Ver Viaje ----------------------------- -->
+<hr>
+
+<body>
+    <h2>Get Viaje</h2>
+    <ul>
+        <li *ngFor="let viaje of viajes">
+            {{ viaje.idviaje }} - {{ viaje.fecha_partida }} - {{viaje.fecha_regreso}} - {{viaje.cupo}} -
+            {{ viaje.descripcion }} - {{ viaje.idestado }} - {{ viaje.origen }} - {{ viaje.destino }}
+        </li>
+    </ul>
+</body>
+<hr>
+<!-- -------------------------- Eliminar Viajes -------------------------- -->
+<h2>Delete Viaje</h2>
+<div *ngFor="let viaje of viajes">
+    <h4>{{ viaje.idviaje }}</h4>
+    <p>{{ viaje.cupo }}</p>
+    <button (click)="deleteViaje(viaje.idviaje)">Eliminar</button>
+</div>
+<hr>
+<!-- ---------------------------- Crear Viaje ---------------------------- -->
+<h1> Crear Viaje</h1>
+<hr>
+<button class="btn btn-outline-primary" (click)="limpiarFormulario()">Limpiar formulario</button>
+<form (ngSubmit)="crearViaje()" id="viajeForm">
+    <div class="mb-3">
+        <label class="form-label">idviaje: *</label>
+        <input type="idviaje" class="form-control" [(ngModel)]="viaje.idviaje" [ngModelOptions]="{standalone:true}"
+            required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">fecha_partida: *</label>
+        <input type="fecha_partida" class="form-control" [(ngModel)]="viaje.fecha_partida" [ngModelOptions]="{standalone:true}"
+            required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">fecha_regreso *</label>
+        <input type="date" class="form-control" [(ngModel)]="viaje.fecha_regreso" [ngModelOptions]="{standalone:true}"
+            required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">cupo: *</label>
+        <input type="number" class="form-control" [(ngModel)]="viaje.cupo" [ngModelOptions]="{standalone:true}"
+            required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">descripcion: *</label>
+        <input type="text" class="form-control" [(ngModel)]="viaje.descripcion" [ngModelOptions]="{standalone:true}"
+            required>
+                    <!-- <select class="form-select" aria-label="Seleccione" [(ngModel)]="usuario.telefono"
+            [ngModelOptions]="{standalone:true}" required>
+            <option selected></option>
+            <option *ngFor="let telefono of telefonos" value="{{telefono.idtelefono}}">{{telefono.value}}</option>
+        </select> -->
+    </div>
+    <div class="mb-3">
+        <label class="form-label">idestado: *</label>
+        <input type="text" class="form-control" [(ngModel)]="viaje.idestado" [ngModelOptions]="{standalone:true}"
+            required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">origen: *</label>
+        <input type="text" class="form-control" [(ngModel)]="viaje.origen" [ngModelOptions]="{standalone:true}"
+            required>
+        </div>
+    <div class="mb-3">
+        <label class="form-label">destino: *</label>
+        <input type="text" class="form-control" [(ngModel)]="viaje.destino" [ngModelOptions]="{standalone:true}"
+            required>
+        </div>
+
+
+    <input type="submit" class="btn btn-outline-success float-end" value="Guardar">
+</form>
+<br>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">idviaje</th>
+            <th scope="col">fecha_partida</th>
+            <th scope="col">fecha_regreso</th>
+            <th scope="col">Cupo</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">IdEstado</th>
+            <th scope="col">Origen</th>
+            <th scope="col">Destino</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let viaje of viajes">
+            <th scope="row">{{viaje.idviaje}}</th>
+            <td>{{viaje.fecha_partida}}</td>
+            <td>{{viaje.fecha_regreso}}</td>
+            <td>{{viaje.cupo}}</td>
+            <td>{{viaje.descripcion}}</td>
+            <td>{{viaje.idestado}}</td>
+            <td>{{viaje.origen}}</td>
+            <td>{{viaje.destino}}</td>
+            <td><button class="btn btn-outline-primary" (click)="modificar(viaje)">Modificar</button>
+                &nbsp;
+                <button class="btn btn-outline-warning" (click)="eliminar(viaje.idviaje)">Eliminar</button>
+            </td>
+        </tr>
+
+    </tbody>
+</table>
+
+
+

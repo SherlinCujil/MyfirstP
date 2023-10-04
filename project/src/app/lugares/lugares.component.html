@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<!-- ---------------------------- Ver Lugar ----------------------------- -->
+<hr>
+
+<body>
+    <h2>Get Lugar</h2>
+    <ul>
+        <li *ngFor="let lugar of lugares">
+            {{ lugar.idlugar }} - {{ lugar.nombre }} - {{lugar.descripcion}} - {{lugar.imagen}} 
+        </li>
+    </ul>
+</body>
+<hr>
+<!-- -------------------------- Eliminar Lugar -------------------------- -->
+<h2>Delete Lugar</h2>
+<div *ngFor="let lugar of lugares">
+    <h4>{{ lugar.idlugar }}</h4>
+    <p>{{ lugar.nombre }}</p>
+    <button (click)="deleteLugar(lugar.idlugar)">Eliminar</button>
+</div>
+<hr>
+<!-- ---------------------------- Crear Lugar ---------------------------- -->
+<h1> Crear Lugar</h1>
+<hr>
+<button class="btn btn-outline-primary" (click)="limpiarFormulario()">Limpiar formulario</button>
+<form (ngSubmit)="crearLugar()" id="lugarform" >
+
+<!-- -------------------------------- Texto -------------------------------- -->
+
+    <div class="mb-3">
+        <label class="form-label">nombre: *</label>
+        <!--<input type="text" class="form-control" [(ngModel)]="lugar.nombre" [ngModelOptions]="{standalone:true}"
+            required>-->
+<input type="text" id="titulo" name="titulo" [(ngModel)]="nuevoLugar.texto" required>
+    </div>
+<!-- -------------------------------- descripcion -------------------------------- -->
+
+
+    <div class="mb-3">
+        <label class="form-label">descripcion *</label>
+        <input type="text" class="form-control" [(ngModel)]="lugar.descripcion" [ngModelOptions]="{standalone:true}"
+            required>
+    </div>
+
+<!-- -------------------------------- imagen -------------------------------- -->
+
+    <div class="mb-3">
+        <label class="form-label">imagen: *</label>
+        <input type="text" class="form-control" [(ngModel)]="lugar.imagen" [ngModelOptions]="{standalone:true}"
+            required>
+    </div>
+
+    <input type="submit" class="btn btn-outline-success float-end" value="Guardar">
+</form>
+<br>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">idlugar</th>
+            <th scope="col">nombre</th>
+            <th scope="col">descripcion/th>
+            <th scope="col">imagen</th>
+            </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let lugar of lugares">
+            <th scope="row">{{lugar.idlugar}}</th>
+            <td>{{lugar.nombre}}</td>
+            <td>{{lugar.descripcion}}</td>
+            <td>{{lugar.imagen}}</td>
+            <td><button class="btn btn-outline-primary" (click)="modificar(lugar)">Modificar</button>
+                &nbsp;
+                <button class="btn btn-outline-warning" (click)="eliminar(lugar.idlugar)">Eliminar</button>
+            </td>
+        </tr>
+
+    </tbody>
+</table>
+

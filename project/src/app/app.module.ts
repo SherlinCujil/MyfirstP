@@ -12,6 +12,8 @@ import { BienvenidaComponent } from './bienvenida/bienvenida.component';
 import { AnuncioComponent } from './anuncio/anuncio.component';
 import { ExamenComponent } from './examen/examen.component';
 import { CrearusuarioComponent } from './crearusuario/crearusuario.component';
+import { ViajesComponent } from './viajes/viajes.component';
+import { LugaresComponent } from './lugares/lugares.component';
 
 
 
@@ -25,7 +27,9 @@ import { CrearusuarioComponent } from './crearusuario/crearusuario.component';
     BienvenidaComponent,
     AnuncioComponent,
     ExamenComponent,
-    CrearusuarioComponent
+    CrearusuarioComponent,
+    ViajesComponent,
+    LugaresComponent
   ],
   imports: [
     BrowserModule,

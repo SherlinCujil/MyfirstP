@@ -11,8 +11,6 @@ import { Observable } from "rxjs";
 export class LugaresComponent {
   texto: string = '';
   lugar:any = [];
-  usuario:any = {};
-  estados:any = [];
   lugares:any = [];
 
   idlugar: any[] = [];
@@ -36,7 +34,7 @@ export class LugaresComponent {
 
   actualizar(u:any){
     this.buscarLugares();
-    this.lugar = {};
+    this.nuevoLugar = {};
   }  
   
   buscarLugares(){

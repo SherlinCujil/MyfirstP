@@ -33,14 +33,10 @@
 <hr>
 <button class="btn btn-outline-primary" (click)="limpiarFormulario()">Limpiar formulario</button>
 <form (ngSubmit)="crearViaje()" id="viajeForm">
-    <div class="mb-3">
-        <label class="form-label">idviaje: *</label>
-        <input type="idviaje" class="form-control" [(ngModel)]="viaje.idviaje" [ngModelOptions]="{standalone:true}"
-            required>
-    </div>
+ 
     <div class="mb-3">
         <label class="form-label">fecha_partida: *</label>
-        <input type="fecha_partida" class="form-control" [(ngModel)]="viaje.fecha_partida" [ngModelOptions]="{standalone:true}"
+        <input type="date" class="form-control" [(ngModel)]="viaje.fecha_partida" [ngModelOptions]="{standalone:true}"
             required>
     </div>
     <div class="mb-3">

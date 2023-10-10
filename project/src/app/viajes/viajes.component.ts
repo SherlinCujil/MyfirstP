@@ -46,7 +46,7 @@ export class ViajesComponent {
   
   buscarViajes(){
     this.servicioBuscarViajes().subscribe(
-      (us:any) => this.viaje = us
+      (us:any) => this.viajes = us
     )
   }
 

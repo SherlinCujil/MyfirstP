@@ -88,6 +88,10 @@ export class BienvenidaComponent {
   //   this.mostrarComponente = this.mostrarComponente;
   // }
 
+CerrarSesion(){
+  location.href="/";
+}
+
 
 
 }

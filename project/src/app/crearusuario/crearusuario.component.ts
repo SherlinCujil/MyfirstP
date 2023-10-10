@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { HttpClient,HttpHeaders} from '@angular/common/http';
 import { Observable } from "rxjs";
 
@@ -12,6 +12,7 @@ export class CrearusuarioComponent {
   texto: string = '';
   usuarios:any = [];
   usuario:any = {};
+  
   user: any[] = [];
   nuevoUser: any = {};
 
@@ -50,6 +51,7 @@ export class CrearusuarioComponent {
 
   limpiarFormulario(){
     this.texto = '';
+    
   }
 
   /* ----------------------------- Llamar Usuario ---------------------------- */

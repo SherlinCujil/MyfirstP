@@ -34,7 +34,7 @@
 <!-- ---------------------------- Crear Usuario ---------------------------- -->
 <h1> Crear usuario</h1>
 <hr>
-<button class="btn btn-outline-primary" (click)="limpiarFormulario()">Limpiar formulario</button>
+<button type="reset" class="btn btn-outline-primary" (click)="limpiarFormulario()">Limpiar formulario</button>
 
 <form (ngSubmit)="crearUsuario()">
     <div class="mb-3 form-group">
@@ -84,7 +84,7 @@
             <td>{{usuario.apellido}}</td>
             <td>{{usuario.password}}</td>
             <td>{{usuario.telefono}}</td>
-            <td><button class="btn btn-outline-primary" (click)="modificar(usuarios)">Modificar</button>
+            <td><button class="btn btn-outline-primary" (click)="modificar(usuario)">Modificar</button>
                 &nbsp;
                 <button class="btn btn-outline-warning" (click)="eliminar(usuario.correo)">Eliminar</button>
             </td>
@@ -92,3 +92,8 @@
 
     </tbody>
 </table>
+
+<button type="submit" class="btn btn-outline-success float-end">
+    <a href="/bienvenida">Regresar</a>
+</button>
+

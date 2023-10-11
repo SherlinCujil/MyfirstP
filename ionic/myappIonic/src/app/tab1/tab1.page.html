@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Login
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,50 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large">Login</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <div id="container" *ngIf="!crearUsuario">
+    <ion-item>
+      <!-- <ion-label>Usuario:</ion-label> -->
+      <ion-input label="Usuario:" [(ngModel)]="usuario.correo" clearInput="true" placeholder="Correo Electronico"></ion-input>
+    </ion-item>
+    <ion-item>
+      <!-- <ion-label>Password:</ion-label> -->
+      <ion-input label="Password:" type="password" [(ngModel)]="usuario.password" clearInput="true"></ion-input>
+    </ion-item>
+
+    <ion-button color="primary" (click)="ingresar()" >Ingresar</ion-button>
+    <br>
+    <ion-button color="danger" (click)="crearcuenta()" >No posees Cuenta</ion-button>
+
+    <label *ngIf="errorlnicio" >Usuario o password incorrecto</label>
+
+  </div>
+
+
+  <div id="container" *ngIf="crearUsuario">
+    <ion-item>
+      <ion-label>Usuario:</ion-label>
+      <ion-input [(ngModel)]="usuario.correo" clearInput="" placeholder="Correo Electronico"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Password:</ion-label>
+      <ion-input type="password" [(ngModel)]="usuario.password" clearInput=""></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Nombre:</ion-label>
+      <ion-input [(ngModel)]="usuario.nombre" clearInput=""></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Apellido:</ion-label>
+      <ion-input [(ngModel)]="usuario.apellido" clearInput=""></ion-input>
+    </ion-item>
+
+    <ion-button color="primary" (click)="crear()" >Ingresar</ion-button>
+  </div>
+
+
+  <!-- <app-explore-container name="Tab 1 page"></app-explore-container> -->
 </ion-content>

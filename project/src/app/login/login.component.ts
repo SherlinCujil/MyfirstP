@@ -25,6 +25,7 @@ export class LoginComponent {
 
   darBienvenida(usuario:any){
     if(usuario){
+      localStorage.setItem("usuario", JSON.stringify(usuario))
       location.href="/bienvenida";
     }
     else{

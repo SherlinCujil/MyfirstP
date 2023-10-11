@@ -15,6 +15,15 @@ export class BienvenidaComponent {
   constructor(private http:HttpClient){
     this.buscarUsuarios();
     this.buscarEstados();
+
+  const usuarioString = localStorage.getItem("usuario");
+    if (usuarioString !== null) {
+        this.usuario = JSON.parse(usuarioString);
+    } else {
+        location.href = "#";
+    }
+  
+
   }
 
   buscarUsuarios(){

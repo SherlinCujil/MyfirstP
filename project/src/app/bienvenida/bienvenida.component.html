@@ -1,16 +1,45 @@
 <div>
     <h1>Bienvenido al Proyecto</h1>
-    <ul *ngFor="let usuario of usuarios">
+    <!-- <ul *ngFor="let usuario of usuarios">
         <li>{{usuario.correo}}</li>
         <li>{{usuario.nombre}}</li>
         <li>{{usuario.apellido}}</li>
         <li>{{usuario.password}}</li>
         <li>{{usuario.telefono}}</li>
-    </ul>
+    </ul> -->
+    <br>
+    <h3>{{usuario.nombre + " " + usuario.apellido}}</h3>
+
 </div>
 <!-- <button class="mycomponente()">Mostarar Componente en Inicio</button> -->
 <!-- <app-anuncio *ngIf="mostrarComponente"></app-anuncio> -->
 
+<br>
+<button type="submit" class="btn btn-outline-success">
+    <a href="/anuncio">ANUNCIOS</a>
+</button>
+<br>
+<br>
+<button type="submit" class="btn btn-outline-success">
+    <a href="/crearusuario">CREAR USUARIOS</a>
+</button>
+<br>
+<br>
+<button type="submit" class="btn btn-outline-success">
+    <a href="/lugares">LUGARES</a>
+</button>
+<br>
+<br>
+<button type="submit" class="btn btn-outline-success">
+    <a href="/viajes">VIAJES</a>
+</button>
+
+<!--app-crearusuario></!--app-crearusuario>
+<app-lugares></app-lugares>
+<app-viajes></app-viajes> -->
+
+
+<!-- ---------------------------- Cerrar Sesion ---------------------------- -->
 <div class="row">
     <div class ="col-md-12">
         <!-- <label class="float-left"> -->
@@ -19,26 +48,3 @@
             <input href="#" (click)="CerrarSesion()" type="submit" class="btn btn-outline-success float-end" value="CerrarSesion">
     </div>
 </div>
-<br>
-<button>
-    <a href="/anuncio">ANUNCIOS</a>
-</button>
-<br>
-<br>
-<button>
-    <a href="/crearusuario">CREAR USUARIOS</a>
-</button>
-<br>
-<br>
-<button>
-    <a href="/lugares">LUGARES</a>
-</button>
-<br>
-<br>
-<button>
-    <a href="/viajes">VIAJES</a>
-</button>
-
-<!--app-crearusuario></!--app-crearusuario>
-<app-lugares></app-lugares>
-<app-viajes></app-viajes> -->

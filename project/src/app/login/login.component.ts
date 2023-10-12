@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HttpClient,HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 @Component({
@@ -9,40 +9,43 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
 })
 export class LoginComponent {
 
-  usuario:any = {};
+  usuario: any = {};
 
-  constructor(private http:HttpClient){ }
+  constructor(private http: HttpClient) { }
 
-  login(){
-    let validarFormulario:any = document.getElementById("loginForm");
-    if(validarFormulario.reportValidity()){
+  login() {
+    let validarFormulario: any = document.getElementById("loginForm");
+    if (validarFormulario.reportValidity()) {
       this.servicioLogin().subscribe(
-        (u:any)=> this.darBienvenida(u)
+        (u: any) => this.darBienvenida(u)
       )
     }
   }
 
 
-  darBienvenida(usuario:any){
-    if(usuario){
+  darBienvenida(usuario: any) {
+    if (usuario) {
       localStorage.setItem("usuario", JSON.stringify(usuario))
-      location.href="/bienvenida";
+      location.href = "/bienvenida";
     }
-    else{
+    else {
       alert("Usuario o password invalido.")
     }
   }
-  servicioLogin(){
-    let httpOptions ={
-      headers:new HttpHeaders({
-        'Content-Type':'application/json'
+  servicioLogin() {
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
       })
+    }
+
+    return this.http.post(
+      "http://localhost:8080/usuario/login",
+      this.usuario,
+      httpOptions);
+
   }
 
-  return this.http.post(
-    "http://localhost:8080/usuario/login",
-    this.usuario,
-    httpOptions);
-  }
+
 }
 //correo@correo.com

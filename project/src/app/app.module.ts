@@ -14,6 +14,7 @@ import { ExamenComponent } from './examen/examen.component';
 import { CrearusuarioComponent } from './crearusuario/crearusuario.component';
 import { ViajesComponent } from './viajes/viajes.component';
 import { LugaresComponent } from './lugares/lugares.component';
+import { MiperfilComponent } from './miperfil/miperfil.component';
 
 
 
@@ -29,7 +30,8 @@ import { LugaresComponent } from './lugares/lugares.component';
     ExamenComponent,
     CrearusuarioComponent,
     ViajesComponent,
-    LugaresComponent
+    LugaresComponent,
+    MiperfilComponent
   ],
   imports: [
     BrowserModule,

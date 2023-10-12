@@ -6,6 +6,7 @@ import { AnuncioComponent } from './anuncio/anuncio.component';
 import { CrearusuarioComponent } from './crearusuario/crearusuario.component';
 import { LugaresComponent } from './lugares/lugares.component';
 import { ViajesComponent } from './viajes/viajes.component';
+import { MiperfilComponent } from './miperfil/miperfil.component';
 
 const routes: Routes = [
 
@@ -15,6 +16,7 @@ const routes: Routes = [
 { path:'crearusuario',component:CrearusuarioComponent},
 { path:'lugares',component:LugaresComponent},
 { path:'viajes',component:ViajesComponent},
+{ path:'miperfil',component:MiperfilComponent},
 { path:'**',component:LoginComponent},
 
 ];

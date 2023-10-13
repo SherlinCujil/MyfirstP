@@ -22,6 +22,11 @@ public class Viaje implements Serializable {
 	 */
 	private static final long serialVersionUID = -4015701623754083368L;
 
+	/**
+	 * 
+	 */
+	
+
 	@Id
 	@Column(name = "idviaje")
 	@GeneratedValue (strategy = GenerationType.IDENTITY)

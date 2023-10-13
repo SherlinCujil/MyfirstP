@@ -21,6 +21,11 @@ public class Comentario implements Serializable{
 		private static final long serialVersionUID = 7955739496314584159L;
 
 
+	/**
+		 * 
+		 */
+		
+
 	@Id
 	@Column(name="idcomentario")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

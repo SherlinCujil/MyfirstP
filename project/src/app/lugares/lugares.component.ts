@@ -29,7 +29,7 @@ export class LugaresComponent {
     return this.http.delete<any>("http://localhost:8080/usuario/eliminar/"+u);
   }
   modificar(u:any){
-    this.lugar = u;
+    this.nuevoLugar = u;
   }
 
   actualizar(u:any){

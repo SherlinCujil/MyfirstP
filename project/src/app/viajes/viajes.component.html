@@ -8,7 +8,7 @@
 </head>
 
 <!-- ---------------------------- Ver Viaje ----------------------------- -->
-<hr>
+<!--hr>
 
 <body>
     <h2>Get Viaje</h2>
@@ -20,63 +20,56 @@
     </ul>
 </body>
 <hr>
-<!-- -------------------------- Eliminar Viajes -------------------------- -->
-<h2>Delete Viaje</h2>
+ -------------------------- Eliminar Viajes -------------------------- -->
+<!--h2>Delete Viaje</h2>
 <div *ngFor="let viaje of viajes">
     <h4>{{ viaje.idviaje }}</h4>
     <p>{{ viaje.cupo }}</p>
     <button (click)="deleteViaje(viaje.idviaje)">Eliminar</button>
 </div>
-<hr>
+<hr -->
 <!-- ---------------------------- Crear Viaje ---------------------------- -->
 <h1> Crear Viaje</h1>
 <hr>
-<button class="btn btn-outline-primary" (click)="limpiarFormulario()">Limpiar formulario</button>
+<button type="reset" class="btn btn-outline-primary" (click)="limpiarFormulario()">Limpiar formulario</button>
 <form (ngSubmit)="crearViaje()" id="viajeForm">
  
     <div class="mb-3">
         <label class="form-label">fecha_partida: *</label>
-        <input type="date" class="form-control" [(ngModel)]="viaje.fecha_partida" [ngModelOptions]="{standalone:true}"
+        <input type="date" class="form-control" [(ngModel)]="nuevoViaje.fecha_partida" [ngModelOptions]="{standalone:true}"
             required>
     </div>
     <div class="mb-3">
         <label class="form-label">fecha_regreso *</label>
-        <input type="date" class="form-control" [(ngModel)]="viaje.fecha_regreso" [ngModelOptions]="{standalone:true}"
+        <input type="date" class="form-control" [(ngModel)]="nuevoViaje.fecha_regreso" [ngModelOptions]="{standalone:true}"
             required>
     </div>
     <div class="mb-3">
         <label class="form-label">cupo: *</label>
-        <input type="number" class="form-control" [(ngModel)]="viaje.cupo" [ngModelOptions]="{standalone:true}"
+        <input type="number" class="form-control" [(ngModel)]="nuevoViaje.cupo" [ngModelOptions]="{standalone:true}"
             required>
     </div>
     <div class="mb-3">
         <label class="form-label">descripcion: *</label>
-        <input type="text" class="form-control" [(ngModel)]="viaje.descripcion" [ngModelOptions]="{standalone:true}"
+        <input type="text" class="form-control" [(ngModel)]="nuevoViaje.descripcion" [ngModelOptions]="{standalone:true}"
             required>
-                    <!-- <select class="form-select" aria-label="Seleccione" [(ngModel)]="usuario.telefono"
-            [ngModelOptions]="{standalone:true}" required>
-            <option selected></option>
-            <option *ngFor="let telefono of telefonos" value="{{telefono.idtelefono}}">{{telefono.value}}</option>
-        </select> -->
-    </div>
+        </div>
     <div class="mb-3">
         <label class="form-label">idestado: *</label>
-        <input type="text" class="form-control" [(ngModel)]="viaje.idestado" [ngModelOptions]="{standalone:true}"
+        <input type="text" class="form-control" [(ngModel)]="nuevoViaje.idestado" [ngModelOptions]="{standalone:true}"
             required>
     </div>
     <div class="mb-3">
         <label class="form-label">origen: *</label>
-        <input type="text" class="form-control" [(ngModel)]="viaje.origen" [ngModelOptions]="{standalone:true}"
+        <input type="text" class="form-control" [(ngModel)]="nuevoViaje.origen" [ngModelOptions]="{standalone:true}"
             required>
         </div>
     <div class="mb-3">
         <label class="form-label">destino: *</label>
-        <input type="text" class="form-control" [(ngModel)]="viaje.destino" [ngModelOptions]="{standalone:true}"
+        <input type="text" class="form-control" [(ngModel)]="nuevoViaje.destino" [ngModelOptions]="{standalone:true}"
             required>
         </div>
-
-
-    <input type="submit" class="btn btn-outline-success float-end" value="Guardar">
+        <button type="submit" class="btn btn-outline-success float-end">Guardar</button>
 </form>
 <br>
 

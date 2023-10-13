@@ -19,7 +19,12 @@ public class Reservacion implements Serializable {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -2281487058309871832L;
+	private static final long serialVersionUID = 8067342538645484520L;
+
+	/**
+	 * 
+	 */
+	
 
 	@Id
 		

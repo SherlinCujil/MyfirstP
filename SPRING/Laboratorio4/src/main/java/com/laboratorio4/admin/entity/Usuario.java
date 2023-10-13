@@ -21,6 +21,10 @@ public class Usuario implements Serializable {
 	 */
 	private static final long serialVersionUID = -155909107354599804L;
 
+	/**
+	 * 
+	 */
+	
 	@Id
 	@Basic (optional = false)
 	@Column(name = "correo")

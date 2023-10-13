@@ -21,6 +21,12 @@ public class Lugar implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = -4095978467046512736L;
+
+
+	/**
+	 * 
+	 */
+	
 	@Id
 	@Column(name = "idlugar")
 	@GeneratedValue (strategy = GenerationType.IDENTITY)

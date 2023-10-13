@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient,HttpHeaders} from '@angular/common/http';
 import { Observable } from "rxjs";
-
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-viajes',
@@ -13,11 +13,6 @@ export class ViajesComponent {
   viaje:any = [];
   viajes:any = [];
   viajess:any = {};
-
-  lugar:any = [];
-  usuario:any = {};
-  estados:any = [];
-  lugares:any = [];
 
   idviaje: any[] = [];
   nuevoViaje: any = {};
@@ -36,7 +31,7 @@ export class ViajesComponent {
     return this.http.delete<any>("http://localhost:8080/viaje/eliminar/"+u);
   }
   modificar(u:any){
-    this.viaje = u;
+    this.nuevoViaje = u;
   }
 
   actualizar(u:any){
@@ -73,7 +68,7 @@ export class ViajesComponent {
 
 /* ---------------------------- Elimianr Usuario --------------------------- */
 deleteViaje(viaje: number) {
-    this.http.delete(`http://localhost:8080/usuario/eliminar/${viaje}`)
+    this.http.delete(`http://localhost:8080/viaje/eliminar/${viaje}`)
       .subscribe(
         () => {
           this.getViaje();
@@ -85,16 +80,16 @@ deleteViaje(viaje: number) {
       );
   }
 
-/* ----------------------------- Crear Usuario ----------------------------- */
+/* ----------------------------- Crear Viaje ----------------------------- */
 crearViaje() {
-  this.http.post('http://localhost:8080/usuario/guardar', this.nuevoViaje)
+  this.http.post('http://localhost:8080/viaje/guardar', this.nuevoViaje)
     .subscribe(
       () => {
         this.nuevoViaje = {};
         this.getViaje();
       },
       (error) => {
-        console.error(error);
+        console.error(error); 
       }
     );
 }

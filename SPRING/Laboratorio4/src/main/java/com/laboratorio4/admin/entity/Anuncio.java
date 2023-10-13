@@ -20,11 +20,14 @@ public class Anuncio implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = -6632322607051096753L;
+
+
+
 	/**
 	 * 
 	 */
 	
-
+	
 	@Id
 		
 	@Column(name = "idanuncio")

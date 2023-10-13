@@ -16,12 +16,16 @@ public class Administrador implements Serializable {
 	
 
 
+
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -7055661997514997822L;
 
 	/**
+	 * 
+	 */
+		/**
 	 * 
 	 */
 	

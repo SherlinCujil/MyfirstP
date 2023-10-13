@@ -18,6 +18,13 @@ public class Estado implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = -7621186848230067939L;
+
+
+
+	/**
+	 * 
+	 */
+	
 	/**
 	 * 
 	 */

@@ -16,6 +16,7 @@ export class BienvenidaComponent {
     this.buscarUsuarios();
     this.buscarEstados();
 
+    /* -------------------------- Usuario inicio sesion ------------------------- */
   const usuarioString = localStorage.getItem("usuario");
     if (usuarioString !== null) {
         this.usuario = JSON.parse(usuarioString);
@@ -98,6 +99,7 @@ export class BienvenidaComponent {
   // }
 
 CerrarSesion(){
+  localStorage.removeItem("usuario");
   location.href="/";
 }
 

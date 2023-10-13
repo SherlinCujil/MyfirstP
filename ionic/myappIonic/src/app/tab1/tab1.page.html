@@ -20,7 +20,7 @@
     </ion-item>
     <ion-item>
       <!-- <ion-label>Password:</ion-label> -->
-      <ion-input label="Password:" type="password" [(ngModel)]="usuario.password" clearInput="true"></ion-input>
+      <ion-input label="Password:" type="password" [(ngModel)]="usuario.password" clearInput="true" placeholder="Su contrasena"></ion-input>
     </ion-item>
 
     <ion-button color="primary" (click)="ingresar()" >Ingresar</ion-button>
@@ -49,8 +49,16 @@
       <ion-label>Apellido:</ion-label>
       <ion-input [(ngModel)]="usuario.apellido" clearInput=""></ion-input>
     </ion-item>
+    <ion-item>
+      <ion-label>Telefono:</ion-label>
+      <ion-input [(ngModel)]="usuario.telefono" clearInput=""></ion-input>
+    </ion-item>
+
 
     <ion-button color="primary" (click)="crear()" >Ingresar</ion-button>
+    
+    <ion-button color="primary" href="/tabs/tab1">Regresar</ion-button>
+
   </div>
 
 

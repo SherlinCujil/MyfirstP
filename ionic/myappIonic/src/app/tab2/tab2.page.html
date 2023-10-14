@@ -18,7 +18,27 @@
   <br>
   <br>
   <ion-button (click)="logout()">Logout</ion-button>
-  <!-- <app-explore-container name="Tab 2 page"></app-explore-container> -->
+  
+  <ion-content>
+    <ion-grid>
+      <ion-row>
+        <ion-col>imagen</ion-col>
+        <ion-col>texto</ion-col>
+        <ion-col>fechaInicio</ion-col>
+        <ion-col>fechaFin</ion-col>
+      </ion-row>
+      <ion-row *ngFor = "let anuncio of anuncios">
+        <ion-col>{{anuncio.imagen}}</ion-col>
+        <ion-col>{{anuncio.texto}}</ion-col>
+        <ion-col>{{anuncio.fechaInicio}}</ion-col>
+        <ion-col>{{anuncio.fechaFin}}</ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
 
+ 
+
+   
+  <!-- <app-explore-container name="Tab 2 page"></app-explore-container> -->
 
 </ion-content>

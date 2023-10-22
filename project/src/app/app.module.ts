@@ -15,6 +15,7 @@ import { CrearusuarioComponent } from './crearusuario/crearusuario.component';
 import { ViajesComponent } from './viajes/viajes.component';
 import { LugaresComponent } from './lugares/lugares.component';
 import { MiperfilComponent } from './miperfil/miperfil.component';
+import { ReservasComponent } from './reservas/reservas.component';
 
 
 
@@ -31,7 +32,8 @@ import { MiperfilComponent } from './miperfil/miperfil.component';
     CrearusuarioComponent,
     ViajesComponent,
     LugaresComponent,
-    MiperfilComponent
+    MiperfilComponent,
+    ReservasComponent
   ],
   imports: [
     BrowserModule,

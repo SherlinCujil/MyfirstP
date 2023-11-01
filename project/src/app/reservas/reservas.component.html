@@ -11,7 +11,6 @@
 <table class="table">
     <thead>
         <tr>
-            <th scope="col">idreservacion</th>
             <th scope="col">cantidad_pasajeros</th>
             <th scope="col">observaciones</th>
             <th scope="col">correo</th>
@@ -22,10 +21,11 @@
     <tbody>
         <tr *ngFor="let reserva of reservas">
             <th scope="row">{{reserva.idreservacion}}</th>
+
             <td>{{reserva.cantidad_pasajeros}}</td>
             <td>{{reserva.observaciones}}</td>
             <td>{{reserva.correo}}</td>
-            <td>{{reserva.IdEstado}}</td>
+            <td>{{reserva.IdEstado | estados : estados}}</td>
             <td>{{reserva.IdViaje}}</td>
                   </tr>
 

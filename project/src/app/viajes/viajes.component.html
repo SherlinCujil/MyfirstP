@@ -36,22 +36,20 @@
 <form (ngSubmit)="crearViaje()" >
     <div class="mb-3 form-group">
         <label class="form-label">fecha_partida: *</label>
-        <input type="fecha_partida" class="form-control" [(ngModel)]="nuevoViaje.fecha_partida" [ngModelOptions]="{standalone:true}"
-            required>
+        <input type="date" [(ngModel)]="nuevoViaje.fecha_partida" [ngModelOptions]="{standalone:true}" placeholder="fecha_partida" required>
     </div>
     <div class="mb-3 form-group">
         <label class="form-label">fecha_regreso *</label>
-        <input type="fecha_regreso" class="form-control" [(ngModel)]="nuevoViaje.fecha_regreso" [ngModelOptions]="{standalone:true}"
-            required>
+        <input type="date" [(ngModel)]="nuevoViaje.fecha_regreso" [ngModelOptions]="{standalone:true}"placeholder="fecha_regreso" required>
     </div>
     <div class="mb-3 form-group">
         <label class="form-label">cupo: *</label>
-        <input type="cupo" class="form-control" [(ngModel)]="nuevoViaje.cupo" [ngModelOptions]="{standalone:true}"
+        <input type="text" class="form-control" [(ngModel)]="nuevoViaje.cupo" [ngModelOptions]="{standalone:true}"
             required>
     </div>
     <div class="mb-3 form-group">
         <label class="form-label">descripcion: *</label>
-        <input type="descipcion" class="form-control" [(ngModel)]="nuevoViaje.descripcion" [ngModelOptions]="{standalone:true}"
+        <input type="text" class="form-control" [(ngModel)]="nuevoViaje.descripcion" [ngModelOptions]="{standalone:true}"
             required>
         </div>
     <div class="mb-3 form-group">
@@ -61,14 +59,26 @@
     </div>
     <div class="mb-3 form-group">
         <label class="form-label">origen: *</label>
-        <input type="origen" class="form-control" [(ngModel)]="nuevoViaje.origen" [ngModelOptions]="{standalone:true}"
+        <select class="form-select" id="origenid"[(ngModel)]="nuevoViaje.origen" name="origen">
+                <option *ngFor="let lugar of lugares" [value] ="lugar.nombre"> {{lugar.nombre}} </option>
+            </select> 
+            </div>
+
+<!--</select>
+<input type="origen" class="form-control" [(ngModel)]="nuevoViaje.origen" [ngModelOptions]="{standalone:true}"
             required>
-        </div>
+        </div>-->
+
     <div class="mb-3 form-group">
         <label class="form-label">destino: *</label>
-        <input type="destino" class="form-control" [(ngModel)]="nuevoViaje.destino" [ngModelOptions]="{standalone:true}"
-            required>
+        <select class="form-select" id="destinoid"[(ngModel)]="nuevoViaje.origen" name="destino">
+            <option *ngFor="let lugar of lugares" [value] ="lugar.nombre"> {{lugar.nombre}} </option>
+        </select> 
         </div>
+
+<!--<input type="destino" class="form-control" [(ngModel)]="nuevoViaje.destino" [ngModelOptions]="{standalone:true}"
+            required>
+        </div>-->
         <button type="submit" class="btn btn-outline-success float-end">Guardar</button>
 </form>
 <br>

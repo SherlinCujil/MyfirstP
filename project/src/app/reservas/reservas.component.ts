@@ -11,11 +11,12 @@ export class ReservasComponent {
   texto: string = '';
   reserva:any = [];
   reservas:any = [];
-
+  estados:any= [];
   idreserva: any[] = [];
 
   constructor(private http:HttpClient){
     this.buscarReservas();
+    this.buscarEstados();
 
 }
 buscarReservas(){
@@ -32,7 +33,15 @@ limpiarFormulario(){
   this.texto = '';
 }
 
+buscarEstados(){
+  this.servicioBuscarEstados().subscribe(
+    (us:any) => this.estados = us
+  )
+}
 
+servicioBuscarEstados():Observable<any>{
+  return this.http.get("http://localhost:8080/estado/buscar");
+}
 
 
 }

@@ -13,6 +13,7 @@ export class ViajesComponent {
   viaje:any = [];
   viajes:any = [];
   viajess:any = {};
+  lugares:any = [];
 
   idviaje: any[] = [];
   nuevoViaje: any = {};
@@ -52,6 +53,16 @@ export class ViajesComponent {
   limpiarFormulario(){
     this.texto = '';
   }
+
+  buscarLugares(){
+    this.servicioBuscarLugares().subscribe(
+      (us:any) => this.lugares = us
+    )
+  }
+  servicioBuscarLugares():Observable<any>{
+    return this.http.get("http://localhost:8080/lugar/buscar");
+  }
+
 
 /* ----------------------------- Llamar Viaje ---------------------------- */
   getViaje(){
@@ -93,6 +104,9 @@ crearViaje() {
       }
     );
 }
+/* ----------------------------- Buscar Lugares ----------------------------- */
+
+
 
 
 

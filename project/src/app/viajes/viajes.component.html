@@ -146,8 +146,8 @@
     <thead>
         <tr>
             <th scope="col">idviaje</th>
-            <th scope="col">fecha_partida</th>
-            <th scope="col">fecha_regreso</th>
+            <th scope="col">fecha_Partida</th>
+            <th scope="col">fecha_Regreso</th>
             <th scope="col">Cupo</th>
             <th scope="col">Descripcion</th>
             <th scope="col">IdEstado</th>
@@ -158,8 +158,8 @@
     <tbody>
         <tr *ngFor="let viaje of viajes">
             <th scope="row">{{viaje.idviaje}}</th>
-            <td>{{viaje.fecha_partida}}</td>
-            <td>{{viaje.fecha_regreso}}</td>
+            <td>{{viaje.fechaPartida}}</td>
+            <td>{{viaje.fechaRegreso}}</td>
             <td>{{viaje.cupo}}</td>
             <td>{{viaje.descripcion}}</td>
             <td>{{viaje.idestado}}</td>

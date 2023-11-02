@@ -64,10 +64,6 @@
             </select> 
             </div>
 
-<!--</select>
-<input type="origen" class="form-control" [(ngModel)]="nuevoViaje.origen" [ngModelOptions]="{standalone:true}"
-            required>
-        </div>-->
 
     <div class="mb-3 form-group">
         <label class="form-label">destino: *</label>
@@ -78,10 +74,55 @@
 
 <!--<input type="destino" class="form-control" [(ngModel)]="nuevoViaje.destino" [ngModelOptions]="{standalone:true}"
             required>
-        </div>-->
+        </div>
         <button type="submit" class="btn btn-outline-success float-end">Guardar</button>
 </form>
+<br> 
+
+
+<h1>Crear Viaje</h1>
 <br>
+<br>
+<form (ngSubmit)="crearViaje()" >
+
+    <br>
+    <br>
+    <h5>Fecha de partida</h5>
+    <input type="date" [(ngModel)]="nuevoViaje.fecha_partida" [ngModelOptions]="{standalone:true}" placeholder="fecha_partida" required>
+    <br>
+    <br>
+    <h5>Fecha del Regreso</h5>
+    <input type="date" [(ngModel)]="nuevoViaje.fecha_regreso" [ngModelOptions]="{standalone:true}" placeholder="fecha_regreso" required>
+    <br>
+    <br>
+   
+    <input type="text" [(ngModel)]="nuevoViaje.cupo" [ngModelOptions]="{standalone:true}" placeholder="cupo" required>
+    <br>
+    <br>
+  
+    <input type="text" [(ngModel)]="nuevoViaje.descripcion" [ngModelOptions]="{standalone:true}" placeholder="descripcion" required>
+
+    <br>
+    <br>
+
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Origen</label>
+        <select class="form-select" id="origenid" [(ngModel)]="nuevoViaje.origen" name="Origen">
+          <option *ngFor="let lugar of lugares" [value]="lugar.nombre">{{lugar.nombre}}</option>
+      </select>
+        </div>
+
+        <br>
+         <br>
+         <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Destino</label>
+            <select class="form-select" id="destinoid" [(ngModel)]="nuevoViaje.destino" name="Destino">
+              <option *ngFor="let lugar of lugares" [value]="lugar.nombre">{{lugar.nombre}}</option>
+          </select>
+            </div>
+
+            <button  type="submit" class="btn btn-outline-primary float-end"> Guardar </button>
+</form> -->
 
 <table class="table">
     <thead>

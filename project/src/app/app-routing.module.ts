@@ -7,6 +7,7 @@ import { CrearusuarioComponent } from './crearusuario/crearusuario.component';
 import { LugaresComponent } from './lugares/lugares.component';
 import { ViajesComponent } from './viajes/viajes.component';
 import { MiperfilComponent } from './miperfil/miperfil.component';
+import { ReservasComponent } from './reservas/reservas.component';
 
 const routes: Routes = [
 
@@ -18,6 +19,7 @@ const routes: Routes = [
 { path:'viajes',component:ViajesComponent},
 { path:'miperfil',component:MiperfilComponent},
 { path:'**',component:LoginComponent},
+{path: 'reservas',component:MiperfilComponent}
 
 ];
 

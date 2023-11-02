@@ -54,15 +54,6 @@ export class ViajesComponent {
     this.texto = '';
   }
 
-  buscarLugares(){
-    this.servicioBuscarLugares().subscribe(
-      (us:any) => this.lugares = us
-    )
-  }
-  servicioBuscarLugares():Observable<any>{
-    return this.http.get("http://localhost:8080/lugar/buscar");
-  }
-
 
 /* ----------------------------- Llamar Viaje ---------------------------- */
   getViaje(){
@@ -104,10 +95,41 @@ crearViaje() {
       }
     );
 }
-/* ----------------------------- Buscar Lugares ----------------------------- */
+/* ----------------------------- CREAR Lugares ----------------------------- */
 
+CrearViaje(){
 
+  let formularioValido: any = document.getElementById("viajeForm");
+  if(formularioValido.reportValidity()){
+  this.servicioviaje().subscribe(
 
+  )
+  }
+  console.log(this.viajes)
+  alert("Viaje creado con exito")
+}
+servicioviaje(){
+  this.viajes.idestado="2"
+let httpOptions = {
+ headers:new HttpHeaders({
+  'Content-Type': 'application/json'
+ })
 
+}
+return this.http.post(
+"http://localhost:8080/viaje/guardar",
+this.viajes,
+httpOptions)
+console.log(this.viajes)
+}
+
+buscarLugares(){
+  this.servicioBuscarLugares().subscribe(
+    (us:any) => this.lugares = us
+  )
+}
+servicioBuscarLugares():Observable<any>{
+  return this.http.get("http://localhost:8080/lugar/buscar");
+}
 
 }

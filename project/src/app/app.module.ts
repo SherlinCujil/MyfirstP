@@ -18,10 +18,6 @@ import { MiperfilComponent } from './miperfil/miperfil.component';
 import { ReservasComponent } from './reservas/reservas.component';
 
 
-
-
-
-
 @NgModule({
   declarations: [
     AppComponent,

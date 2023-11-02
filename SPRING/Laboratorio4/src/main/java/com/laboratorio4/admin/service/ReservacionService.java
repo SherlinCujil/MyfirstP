@@ -36,8 +36,8 @@ public class ReservacionService {
 		
 	}
 	
-	@DeleteMapping(path="/eliminar/{reservacion}")
-	public void eliminar(@PathVariable("reservacion") int idreservacion){
+	@DeleteMapping(path="/eliminar/{idreservacion}")
+	public void eliminar(@PathVariable("idreservacion") int idreservacion){
 		reservacionRepository.deleteById(idreservacion);
 				
 	}

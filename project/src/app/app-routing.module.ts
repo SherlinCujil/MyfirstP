@@ -18,8 +18,9 @@ const routes: Routes = [
 { path:'lugares',component:LugaresComponent},
 { path:'viajes',component:ViajesComponent},
 { path:'miperfil',component:MiperfilComponent},
+{path: 'reservas',component:ReservasComponent},
 { path:'**',component:LoginComponent},
-{path: 'reservas',component:ReservasComponent}
+
 
 ];
 

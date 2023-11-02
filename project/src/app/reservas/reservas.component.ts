@@ -12,6 +12,7 @@ export class ReservasComponent {
  
   reservas:any = [];
   estado:any= [];
+  reserva:any = {};
  
   constructor(private http:HttpClient){
     this.buscarReservas();

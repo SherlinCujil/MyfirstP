@@ -25,7 +25,7 @@ export class Tab4Page {
   //   localStorage.removeItem("usuario");
   //   location.href = "/tabs/tab1";
   // }
-estado:any = [];
+  estado:any = [];
   reservaciones:any = [];
   nuevoViaje:any = [];
   lugares:any= [];

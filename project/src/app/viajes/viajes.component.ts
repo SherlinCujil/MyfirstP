@@ -109,7 +109,7 @@ CrearViaje(){
   alert("Viaje creado con exito")
 }
 servicioviaje(){
-  this.viajes.idestado="2"
+  this.viajes.idestado="0"
 let httpOptions = {
  headers:new HttpHeaders({
   'Content-Type': 'application/json'
@@ -121,6 +121,7 @@ return this.http.post(
 this.viajes,
 httpOptions)
 console.log(this.viajes)
+
 }
 
 buscarLugares(){

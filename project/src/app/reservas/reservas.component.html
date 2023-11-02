@@ -1,16 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
 
 <!-- ---------------------------- Ver Reservas ---------------------------- -->
 <table class="table">
     <thead>
         <tr>
+            <th scope="col">#</th>
             <th scope="col">cantidad_pasajeros</th>
             <th scope="col">observaciones</th>
             <th scope="col">correo</th>
@@ -25,7 +19,7 @@
             <td>{{reserva.cantidad_pasajeros}}</td>
             <td>{{reserva.observaciones}}</td>
             <td>{{reserva.correo}}</td>
-            <td>{{reserva.IdEstado }}</td>
+            <td>{{reserva.IdEstado | estado : estado }}</td>
             <td>{{reserva.IdViaje}}</td>
                   </tr>
 

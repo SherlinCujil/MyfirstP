@@ -16,6 +16,7 @@ import { ViajesComponent } from './viajes/viajes.component';
 import { LugaresComponent } from './lugares/lugares.component';
 import { MiperfilComponent } from './miperfil/miperfil.component';
 import { ReservasComponent } from './reservas/reservas.component';
+import { EstadoPipe } from './estado.pipe';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { ReservasComponent } from './reservas/reservas.component';
     ViajesComponent,
     LugaresComponent,
     MiperfilComponent,
-    ReservasComponent
+    ReservasComponent,
+    EstadoPipe
   ],
   imports: [
     BrowserModule,

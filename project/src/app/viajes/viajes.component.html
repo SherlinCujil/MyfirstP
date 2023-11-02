@@ -57,20 +57,38 @@
         <input type="idestado" class="form-control" [(ngModel)]="nuevoViaje.idestado" [ngModelOptions]="{standalone:true}"
             required>
     </div>
+
+
     <div class="mb-3 form-group">
-        <label class="form-label">origen: *</label>
+        <label for="exampleFormControlInput1" class="form-label">origen</label>
+        <select class="form-select" id="origenid" [(ngModel)]="nuevoViaje.origen" name="origen">
+          <option *ngFor="let lugar of lugares" [value]="lugar.nombre">{{lugar.nombre}}</option>
+      </select>
+        </div>
+
+
+
+      <!-- <label class="form-label">origen: *</label>
         <select class="form-select" id="origenid"[(ngModel)]="nuevoViaje.origen" name="origen">
                 <option *ngFor="let lugar of lugares" [value] ="lugar.nombre"> {{lugar.nombre}} </option>
-            </select> 
-            </div>
+            </select>
+            </div>-->
 
 
     <div class="mb-3 form-group">
-        <label class="form-label">destino: *</label>
-        <select class="form-select" id="destinoid"[(ngModel)]="nuevoViaje.origen" name="destino">
+        <label for="exampleFormControlInput1" class="form-label">destino</label>
+        <select class="form-select" id="destinoid" [(ngModel)]="nuevoViaje.destino" name="destino">
+          <option *ngFor="let lugar of lugares" [value]="lugar.nombre">{{lugar.nombre}}</option>
+      </select>
+        </div>
+
+
+
+      <!--  <label class="form-label">destino: *</label>
+        <select class="form-select" id="destinoid"[(ngModel)]="nuevoViaje.destino" name="destino">
             <option *ngFor="let lugar of lugares" [value] ="lugar.nombre"> {{lugar.nombre}} </option>
         </select> 
-        </div>
+        </div>-->
 
 <!--<input type="destino" class="form-control" [(ngModel)]="nuevoViaje.destino" [ngModelOptions]="{standalone:true}"
             required>

@@ -12,6 +12,7 @@ export class BienvenidaComponent {
   usuarios:any = [];
   usuario:any = {};
   estados:any = [];
+  reservas:any = [];
   constructor(private http:HttpClient){
     this.buscarUsuarios();
     this.buscarEstados();
@@ -102,7 +103,6 @@ CerrarSesion(){
   localStorage.removeItem("usuario");
   location.href="/";
 }
-
 
 
 }

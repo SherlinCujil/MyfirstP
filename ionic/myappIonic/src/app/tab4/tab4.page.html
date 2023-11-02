@@ -12,12 +12,26 @@
       <ion-title size="large">Reservaciones</ion-title>
     </ion-toolbar>
   </ion-header>
+  <div>
+    <br>
+    
+    <br>
+    <ion-card *ngFor="let reservacion of reservaciones">
+      <ion-card-header>
+        <br>
+        <ion-card-title>{{reservacion.observaciones}}</ion-card-title>
+        <ion-card-subtitle> {{reservacion.correo}}</ion-card-subtitle>
+        <br>
+        {{reservacion.idestado | estado : estado}}
+        <li scope="row">{{reservacion.idreservacion}}</li>
+        <br>
+      </ion-card-header>
+    
+      <ion-card-content>
+        {{reservacion.idviaje}}
+        <br>
+        {{reservacion.cantidad_pasajeros}}
+        <br>
+       
 
-  <h1>Reservaciones</h1>
-  <br>
-  <label> {{usuario.nombre + " " + usuario.apellido}}</label>
-  <br>
-  <br>
-  <!-- <ion-button (click)="logout()">Logout</ion-button> -->
-  <!-- <app-explore-container name="Tab 3 page"></app-explore-container> -->
-</ion-content>
+      </ion-card-content>

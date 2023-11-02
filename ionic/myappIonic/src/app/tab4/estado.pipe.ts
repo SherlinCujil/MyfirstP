@@ -12,7 +12,7 @@ export class EstadoPipe implements PipeTransform {
         return es.valor;
       }
     }
-    return "no se encuentra info";
+    return "no hay informacion";
   }
 
 }

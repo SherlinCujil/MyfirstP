@@ -7,6 +7,7 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 import { HttpClientModule } from '@angular/common/http';
 
 import { Tab4PageRoutingModule } from './tab4-routing.module';
+import { EstadoPipe } from './estado.pipe';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import { Tab4PageRoutingModule } from './tab4-routing.module';
     Tab4PageRoutingModule,
     HttpClientModule
   ],
-  declarations: [Tab4Page]
+  declarations: [Tab4Page , EstadoPipe]
 })
 export class Tab4PageModule {}

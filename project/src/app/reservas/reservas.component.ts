@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient,HttpHeaders} from '@angular/common/http';
 import { Observable } from "rxjs";
+import { EstadoPipe } from "src/app/estado.pipe";
 
 @Component({
   selector: 'app-reservas',
@@ -11,8 +12,9 @@ export class ReservasComponent {
   texto: string = '';
  
   reservas:any = [];
-  estado:any= [];
+  valor:any= [];
   reserva:any = {};
+
  
   constructor(private http:HttpClient){
     this.buscarReservas();
@@ -35,7 +37,7 @@ limpiarFormulario(){
 
 buscarEstados(){
   this.servicioBuscarEstados().subscribe(
-    (us:any) => this.estado = us
+    (us:any) => this.valor = us
   )
 }
 

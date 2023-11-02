@@ -1,4 +1,5 @@
-
+<H1>Reservaciones</H1>
+<hr>
 
 <!-- ---------------------------- Ver Reservas ---------------------------- -->
 <table class="table">
@@ -15,13 +16,12 @@
     <tbody>
         <tr *ngFor="let reserva of reservas">
             <th scope="row">{{reserva.idreservacion}}</th>
-
-            <td>{{reserva.cantidad_pasajeros}}</td>
+            <td>{{reserva.cantidadPasajeros}}</td>
             <td>{{reserva.observaciones}}</td>
             <td>{{reserva.correo}}</td>
-            <td>{{reserva.IdEstado  }}</td>
-            <td>{{reserva.IdViaje}}</td>
-                  </tr>
+            <td>{{reserva.idestado | valor : valor}}</td>
+            <td>{{reserva.idviaje}}</td>
+        </tr>
 
     </tbody>
 </table>

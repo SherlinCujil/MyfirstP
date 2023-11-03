@@ -9,33 +9,47 @@ import { HttpClient } from '@angular/common/http';
 })
 export class Tab5Page {
 
-  usuario:any;
-  usuarios:any = [];
+  // usuario:any;
+  // usuarios:any = [];
+  usuarioinicio:any={};
 
 
   constructor(private http:HttpClient){
-    this.buscarUsuarios();
-    const usuarioString = localStorage.getItem("usuario");
-    if (usuarioString !== null) {
-        this.usuario = JSON.parse(usuarioString);
-    } else {
-        location.href = "#";
+
+    let u = localStorage.getItem("usuario");
+    if(u){
+      this.usuarioinicio = JSON.parse(u);
     }
+
+
+    // this.buscarUsuarios();
+    // const usuarioString = localStorage.getItem("usuario");
+    // if (usuarioString !== null) {
+    //     this.usuario = JSON.parse(usuarioString);
+    // } else {
+    //     location.href = "#";
+    // }
   }
 
-  buscarUsuarios(){
-    this.servicioBuscarUsuarios().subscribe(
-      (us:any) => this.usuarios = us
-    )
-  }
+  // buscarUsuarios(){
+  //   this.servicioBuscarUsuarios().subscribe(
+  //     (us:any) => this.usuarios = us
+  //   )
+  // }
 
-  servicioBuscarUsuarios():Observable<any>{
-    return this.http.get("http://localhost:8080/administrador/buscar");
-  }
+  // servicioBuscarUsuarios():Observable<any>{
+  //   return this.http.get("http://localhost:8080/administrador/buscar");
+  // }
 
-  logout() {
-    localStorage.removeItem("usuario");
-    location.href = "/tabs/tab1";
-  }
+  // logout() {
+  //   localStorage.removeItem("usuario");
+  //   location.href = "/tabs/tab1";
+  // }
   
+logout(){
+  localStorage.clear();
+  location.reload();
+}
+
+
 }

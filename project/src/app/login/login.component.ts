@@ -22,6 +22,17 @@ export class LoginComponent {
     }
   }
 
+  servicioLogin() {
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    }
+    return this.http.post(
+      "http://localhost:8080/usuario/login",
+      this.usuario,
+      httpOptions);
+  }
 
   darBienvenida(usuario: any) {
     if (usuario) {
@@ -31,19 +42,6 @@ export class LoginComponent {
     else {
       alert("Usuario o password invalido.")
     }
-  }
-  servicioLogin() {
-    let httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json'
-      })
-    }
-
-    return this.http.post(
-      "http://localhost:8080/usuario/login",
-      this.usuario,
-      httpOptions);
-
   }
 
 

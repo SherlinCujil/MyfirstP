@@ -45,7 +45,7 @@ export class Tab4Page {
   
    }
    this.buscarPorcorreo();
-   
+   console.log("usuarioiniciado",this.usuarioinicio.correo);
 
 }
 buscarReserva(){
@@ -95,7 +95,7 @@ servicioBuscarReservas():Observable<any>{
       )
      }
      serviciobuscarPorcorreo():Observable<any>{
-      return this.http.get("http://localhost:8080/reservacion/buscar/"+this.usuarioinicio);
+      return this.http.get("http://localhost:8080/reservacion/buscar/"+this.usuarioinicio.correo);
       console.log("usuarioiniciado",this.usuarioinicio);
     }
 }

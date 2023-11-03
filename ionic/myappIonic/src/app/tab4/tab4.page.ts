@@ -32,8 +32,11 @@ export class Tab4Page {
   usuarioinicio:any ={};
   constructor(private http:HttpClient){
    this.buscarReserva();
+
    this.buscarEstados();
+
    this.buscarViajes();
+   
    this.buscarLugares();
 
    let t = localStorage.getItem("usuario");
@@ -92,10 +95,11 @@ servicioBuscarReservas():Observable<any>{
       )
      }
      serviciobuscarPorcorreo():Observable<any>{
-      return this.http.get(`http://localhost:8080/reservacion/buscar/${this.usuarioinicio.correo}`);
+      return this.http.get("http://localhost:8080/reservacion/buscar/"+this.usuarioinicio);
+      console.log("usuarioiniciado",this.usuarioinicio);
     }
 }
 
-
+//return this.http.get(`http://localhost:8080/reservacion/buscar/${this.usuarioinicio.correo}`);
 
 

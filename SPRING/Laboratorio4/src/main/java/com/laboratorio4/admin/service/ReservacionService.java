@@ -42,6 +42,11 @@ public class ReservacionService {
 				
 	}
 		
+	@GetMapping(path="/buscar/{correo}")
+	public List<Reservacion> buscar(@PathVariable("correo")String correo){
+		return reservacionRepository.findByCorreo(correo);
+	
+	
 	/*@GetMapping(path="/buscar/correo/{correo}/observaciones/{observaciones}")
 	public List<Reservacion> buscarPorCorreoYObservaciones(
 			@PathVariable String correo,
@@ -49,4 +54,5 @@ public class ReservacionService {
 		return reservacionRepository.findByCorreoAndObservaciones(correo, observaciones);
 	}
 	*/
+	}
 }

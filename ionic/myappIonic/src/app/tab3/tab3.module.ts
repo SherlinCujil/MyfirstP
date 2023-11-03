@@ -7,6 +7,8 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 import { HttpClientModule } from '@angular/common/http';
 
 import { Tab3PageRoutingModule } from './tab3-routing.module';
+import { LugaresPipe } from './lugares.pipe';
+import { EstadoPipe } from './estado.pipe';
 
 @NgModule({
   imports: [
@@ -17,6 +19,6 @@ import { Tab3PageRoutingModule } from './tab3-routing.module';
     Tab3PageRoutingModule,
     HttpClientModule
   ],
-  declarations: [Tab3Page]
+  declarations: [Tab3Page, LugaresPipe, EstadoPipe]
 })
 export class Tab3PageModule {}

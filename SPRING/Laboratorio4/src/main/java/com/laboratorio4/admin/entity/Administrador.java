@@ -58,6 +58,13 @@ public class Administrador implements Serializable {
 		this.usuario = admin;
 	}
 
+	public String getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
+	}
 	public String getUniversidad() {
 		return universidad;
 	}

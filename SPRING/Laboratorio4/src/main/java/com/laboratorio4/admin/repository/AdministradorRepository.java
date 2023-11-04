@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.laboratorio4.admin.entity.Administrador;
+import com.laboratorio4.admin.entity.Usuario;
 
 
 
@@ -18,5 +19,5 @@ public interface AdministradorRepository  extends JpaRepository< Administrador, 
 	public List<Administrador> findByNombreAndCarnet
 	(String nombre,String carnet);
 	
-	
+	List<Administrador>findByUsuarioAndPassword(String usuario, String password);
 }

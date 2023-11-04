@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-login',
@@ -27,23 +27,28 @@ export class LoginComponent {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       })
+    };
+    if (this.usuario.correo === "admin" && this.usuario.password === "admin") {
+      console.log(this.usuario.correo, this.usuario.password);
+      return this.http.post("http://localhost:8080/administrador/login", this.usuario, httpOptions);
+
+    } else {
+      console.log(this.usuario.correo, this.usuario.password);
+      return this.http.post("http://localhost:8080/usuario/login", this.usuario, httpOptions);
     }
-    return this.http.post(
-      "http://localhost:8080/usuario/login",
-      this.usuario,
-      httpOptions);
   }
 
   darBienvenida(usuario: any) {
     if (usuario) {
       localStorage.setItem("usuario", JSON.stringify(usuario))
-      location.href = "/bienvenida";
-    }
-    else {
+      if (usuario === "admin") {
+        location.href = "/bienvenida";
+      } else {
+        location.href = "/bienvenida";
+      }
+    } else {
       alert("Usuario o password invalido.")
     }
   }
 
-
 }
-//correo@correo.com

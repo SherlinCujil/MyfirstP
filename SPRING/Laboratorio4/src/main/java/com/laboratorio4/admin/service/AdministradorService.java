@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.laboratorio4.admin.entity.Administrador;
+import com.laboratorio4.admin.entity.Usuario;
 import com.laboratorio4.admin.repository.AdministradorRepository;
 
 
@@ -49,5 +50,24 @@ public class AdministradorService {
 			@PathVariable String carnet){
 		return administradorRepository.findByNombreAndCarnet(nombre,carnet);
 	}
+
+	@PostMapping(path="/login")
+	public Administrador login(@RequestBody Administrador administrador){
+	
+     List<Administrador> ListaUsuarios=
+     administradorRepository.findByUsuarioAndPassword
+     (administrador.getUsuario(),
+      administrador.getPassword());
+     
+     Administrador administradorRetorno = null;
+     
+     if(!ListaUsuarios.isEmpty()) {
+     
+     	administradorRetorno = ListaUsuarios.get(0);
+     
+     }
+		return administradorRetorno;
+		
+}
 	
 }

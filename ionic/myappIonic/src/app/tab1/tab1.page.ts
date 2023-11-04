@@ -7,16 +7,28 @@ import { Component } from '@angular/core';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-
+  iniciarSesionn: boolean=false;
   usuario:any = {};
   errorlnicio: boolean = false;
   crearUsuario: boolean = false;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+
+
+    let t = localStorage.getItem("usuario");
+    if(t){
+      this.iniciarSesionn = true;
+ }
+ else{
+  this.iniciarSesionn = false;
+ }
+
+   }
 
   /* ---------------------------------- Login --------------------------------- */
   ingresar() {
-    if (this.usuario.correo && this.usuario.password) {
+    if (this.usuario.correo && this.usuario.password
+      && this.usuario.correo!= "" && this.usuario.password !="") {
       this.servicioLogin().subscribe(
         data => this.iniciarSesion(data))
     } else {
@@ -24,13 +36,25 @@ export class Tab1Page {
     }
   }
 
-  iniciarSesion(result: any) {
-    if (result) {
-      localStorage.setItem("usuario", JSON.stringify(result))
-      location.href = "/tabs/tab2";
-    } else {
-      this.errorlnicio = true;
-    }
+  iniciarSesion(usuario: any) {
+    if (usuario) {
+     // localStorage.setItem("usuario", JSON.stringify(usuario))
+      //location.href = "/tabs/tab2";
+
+   //} else {
+      //this.errorlnicio = true;
+    //}
+
+    let t = JSON.stringify(usuario);
+    localStorage.setItem("usuario", t);
+    location.href = "/tabs/tab2";
+        this.usuario ={};
+        this.iniciarSesionn = true;
+      }
+      else {
+        alert("Usuario o password invalidos.")
+      }
+
   }
 
   servicioLogin() {
@@ -39,7 +63,8 @@ export class Tab1Page {
         'Content-Type':'application/json'
       })
     }
-    return this.http.post<any>("http://localhost:8080/usuario/login", this.usuario, httpOptions);
+    return this.http.post<any>("http://localhost:8080/usuario/login", 
+    this.usuario, httpOptions);
   }
 
   /* ------------------------------ Crear Cuenta ------------------------------ */

@@ -25,11 +25,12 @@ export class Tab4Page {
   //   localStorage.removeItem("usuario");
   //   location.href = "/tabs/tab1";
   // }
-  estado:any = [];
+  valor:any = [];
   reservaciones:any = [];
   nuevoViaje:any = [];
   lugares:any= [];
   usuarioinicio:any ={};
+
   constructor(private http:HttpClient){
    this.buscarReserva();
 
@@ -45,7 +46,7 @@ export class Tab4Page {
   
    }
    this.buscarPorcorreo();
-   console.log("usuarioiniciado",this.usuarioinicio.correo);
+   //console.log("usuarioiniciado",this.usuarioinicio.correo);
 
 }
 buscarReserva(){
@@ -59,7 +60,7 @@ servicioBuscarReservas():Observable<any>{
  }
  buscarEstados(){
   this.servicioBuscarEstados().subscribe(
-    (e:any)=>this.estado = e
+    (e:any)=>this.valor = e
   )
 
  } 
@@ -95,11 +96,11 @@ servicioBuscarReservas():Observable<any>{
       )
      }
      serviciobuscarPorcorreo():Observable<any>{
-      return this.http.get("http://localhost:8080/reservacion/buscar/"+this.usuarioinicio.correo);
-      console.log("usuarioiniciado",this.usuarioinicio);
+      return this.http.get(`http://localhost:8080/reservacion/buscar/${this.usuarioinicio.correo}`);
     }
 }
 
 //return this.http.get(`http://localhost:8080/reservacion/buscar/${this.usuarioinicio.correo}`);
 
-
+//return this.http.get("http://localhost:8080/reservacion/buscar/"+this.usuarioinicio.correo);
+ //     console.log("usuarioiniciado",this.usuarioinicio);

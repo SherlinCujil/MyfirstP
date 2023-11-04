@@ -13,7 +13,7 @@ export class ViajesComponent {
   viaje:any = [];
   viajes:any = [];
   viajess:any = {};
-  lugares:any = [];
+  //lugares:any = [];
 
   idviaje: any[] = [];
   nuevoViaje: any = {};
@@ -123,6 +123,7 @@ httpOptions)
 console.log(this.viajes)
 
 }
+lugares:any = [];
 
 buscarLugares(){
   this.servicioBuscarLugares().subscribe(

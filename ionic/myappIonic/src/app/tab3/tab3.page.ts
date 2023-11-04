@@ -9,8 +9,8 @@ import { Observable } from 'rxjs';
 })
 export class Tab3Page {
   viajes:any = [];
-  nombre:any = [];  
-  valor:any = []; 
+  nombre:any = [];  //lugar
+  valor:any = []; //para llamar estado
   nuevaReservacion:any = {};
   VerReserva:boolean = false 
   Usuarioinicio:any ={};

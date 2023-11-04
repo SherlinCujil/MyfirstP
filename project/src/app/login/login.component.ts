@@ -29,26 +29,23 @@ export class LoginComponent {
       })
     };
     if (this.usuario.correo === "admin" && this.usuario.password === "admin") {
-      console.log(this.usuario.correo, this.usuario.password);
       return this.http.post("http://localhost:8080/administrador/login", this.usuario, httpOptions);
 
     } else {
-      console.log(this.usuario.correo, this.usuario.password);
       return this.http.post("http://localhost:8080/usuario/login", this.usuario, httpOptions);
     }
   }
 
   darBienvenida(usuario: any) {
-    if (usuario) {
+    // if (!usuario) {
       localStorage.setItem("usuario", JSON.stringify(usuario))
       if (usuario === "admin") {
         location.href = "/bienvenida";
       } else {
         location.href = "/bienvenida";
       }
-    } else {
-      alert("Usuario o password invalido.")
-    }
+    // } else {
+    //   alert("Usuario o password invalido.")
+    // }
   }
-
 }

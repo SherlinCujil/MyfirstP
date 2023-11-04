@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HttpClient,HttpHeaders} from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from "rxjs";
 
 @Component({
@@ -9,89 +9,87 @@ import { Observable } from "rxjs";
 })
 export class BienvenidaComponent {
   mostrarComponente: Boolean = false;
-  usuarios:any = [];
-  usuario:any = {};
-  estados:any = [];
-  reservas:any = [];
-  constructor(private http:HttpClient){
-    this.buscarUsuarios();
-    this.buscarEstados();
-
-    /* -------------------------- Usuario inicio sesion ------------------------- */
-  const usuarioString = localStorage.getItem("usuario");
-    if (usuarioString !== null) {
-        this.usuario = JSON.parse(usuarioString);
-    } else {
-        location.href = "#";
-    }
+  usuarios: any = [];
+  usuario: any = {};
+  administrador: any = {};
+  estados: any = [];
+  reservas: any = [];
   
+  constructor(private http: HttpClient) {
+    /* -------------------------- Usuario inicio sesion ------------------------- */
+    const usuarioString = localStorage.getItem("usuario");
+    if (usuarioString !== null) {
+      this.usuario = JSON.parse(usuarioString);
+    } else {
+      location.href = "#";
+    }
 
   }
 
-  buscarUsuarios(){
+  buscarUsuarios() {
     this.servicioBuscarUsuarios().subscribe(
-      (us:any) => this.usuarios = us
+      (us: any) => this.usuarios = us
     )
   }
 
-  servicioBuscarUsuarios():Observable<any>{
+  servicioBuscarUsuarios(): Observable<any> {
     return this.http.get("http://localhost:8080/usuario/buscar");
   }
 
 
-  crearUsuario(){
+  crearUsuario() {
 
-    let formularioValido:any = document.getElementById("usuarioForm");
-    if(formularioValido.reportValidity()){
+    let formularioValido: any = document.getElementById("usuarioForm");
+    if (formularioValido.reportValidity()) {
       this.usuario.fechaCreacion = new Date();
       this.servicioGuardar().subscribe(
-        (u:any) => this.actualizar(u)
+        (u: any) => this.actualizar(u)
       )
     }
   }
 
-  modificar(u:any){
+  modificar(u: any) {
     this.usuario = u;
   }
 
-  actualizar(u:any){
+  actualizar(u: any) {
     this.buscarUsuarios();
     this.usuario = {};
   }
 
-  servicioGuardar(){
-    let httpOptions ={
-      headers:new HttpHeaders({
-        'Content-Type':'application/json'
+  servicioGuardar() {
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
       })
+    }
+
+    return this.http.post(
+      "http://localhost:8080/usuario/guardar",
+      this.usuario,
+      httpOptions);
   }
 
-  return this.http.post(
-    "http://localhost:8080/usuario/guardar",
-    this.usuario,
-    httpOptions);
-  }
 
-
-  buscarEstados(){
+  buscarEstados() {
     this.servicioBuscarEstados().subscribe(
-      (u:any)=>this.estados = u
+      (u: any) => this.estados = u
     )
   }
-  servicioBuscarEstados():Observable<any>{
+  servicioBuscarEstados(): Observable<any> {
     return this.http.get<any>("http://localhost:8080/estado/buscar/tabla/usuario/campo/estado");
   }
 
-  eliminar(u:any){
+  eliminar(u: any) {
     this.eliminarUsuario(u).subscribe(
-      (u:any)=>this.actualizar(u)
+      (u: any) => this.actualizar(u)
     )
   }
-  eliminarUsuario(u:any):Observable<any>{
-    return this.http.delete<any>("http://localhost:8080/usuario/eliminar/"+u.idusuario);
+  eliminarUsuario(u: any): Observable<any> {
+    return this.http.delete<any>("http://localhost:8080/usuario/eliminar/" + u.idusuario);
   }
 
- EliminarFormulario(){
+  EliminarFormulario() {
     this.usuario = {};
   }
 
@@ -99,10 +97,10 @@ export class BienvenidaComponent {
   //   this.mostrarComponente = this.mostrarComponente;
   // }
 
-CerrarSesion(){
-  localStorage.removeItem("usuario");
-  location.href="/";
-}
+  CerrarSesion() {
+    localStorage.removeItem("usuario");
+    location.href = "/";
+  }
 
 
 }

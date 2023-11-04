@@ -38,7 +38,7 @@ export class Tab1Page {
       headers:new HttpHeaders({
         'Content-Type':'application/json'
       })
-    }
+    };
     return this.http.post<any>("http://localhost:8080/usuario/login", this.usuario, httpOptions);
   }
 
@@ -77,14 +77,4 @@ export class Tab1Page {
     }
     return this.http.post<any>("http://localhost:8080/usuario/guardar", this.usuario, httpOptions);
   }
-
-
-
-
-
-
-
-
-
-
 }

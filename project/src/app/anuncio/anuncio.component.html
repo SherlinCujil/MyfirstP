@@ -30,7 +30,7 @@
 <hr>
 <!-- ---------------------------- Crear Anuncio ---------------------------- -->
 <h2>Create Anuncios</h2>
-<form (ngSubmit)="crearAnuncio()">
+<form (ngSubmit)="crearAnuncioImagen()">
 <!-- -------------------------------- Texto -------------------------------- -->
     <div class="form-group">
         <label for="titulo">Texto Para el Anuncio</label>
@@ -38,8 +38,8 @@
     </div>
 <!-- ------------------------------- imagen -------------------------------- -->
     <div class="form-group">
-        <label for="descripcion">Imagen</label>
-        <input type="file" id="descripcion" name="image" [(ngModel)]="nuevoAnuncio.imagen" required>
+        <label for="imagen">Imagen</label>
+        <input type="file" id="imagen" name="image" [(ngModel)]="nuevoAnuncio.imagen" required>
     </div>
 <!-- ----------------------------- fechaInicio ----------------------------- -->
 <div class="form-group">

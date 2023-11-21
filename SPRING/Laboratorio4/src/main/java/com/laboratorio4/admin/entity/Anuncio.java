@@ -37,10 +37,10 @@ public class Anuncio implements Serializable {
 	
 	
 	
-	@Column (name="texto")
+	@Column (name="LONGTEXT")
 	private String texto;
 	
-	@Column(name="imagen")
+	@Column(name="LONGTEXT")
 	private String imagen;
 	
 	@Column(name="fechaInicio")
@@ -56,6 +56,7 @@ public class Anuncio implements Serializable {
 	public void setIdanuncio(int idanuncio) {
 		this.idanuncio = idanuncio;
 	}
+
 
 	public String getTexto() {
 		return texto;

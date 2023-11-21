@@ -4,6 +4,7 @@ package com.laboratorio4.admin.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,14 +38,19 @@ public class AnuncioService {
 		
 	}
 	
-	@DeleteMapping(path="/eliminar/{anuncio}")
-	public void eliminar(@PathVariable("anuncio") int idanuncio){
-		anuncioRepository.deleteById(idanuncio);
-		
+	@PostMapping("/guardar")
+    public ResponseEntity<String> crearAnuncio(@RequestBody Anuncio anuncio) {
+        // 
+        anuncioRepository.save(anuncio);
+        return ResponseEntity.ok("Anuncio creado exitosamente.");
+    }
 	
-		
-		
-	}
+	
+	
+	//@DeleteMapping(path="/eliminar/{anuncio}")
+	//public void eliminar(@PathVariable("anuncio") int idanuncio){
+	//	anuncioRepository.deleteById(idanuncio);	
+	//}
 
 		
 	@GetMapping(path="/buscar/texto/{texto}/imagen/{imagen}")

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
+import { AnuncioService } from './anuncio.service';
 
 @Component({
   selector: 'app-anuncio',
@@ -11,11 +12,24 @@ export class AnuncioComponent {
   anuncios: any[] = [];
   nuevoAnuncio: any = {};
 
-  constructor(private http:HttpClient){ }
+  constructor(private http:HttpClient, private anuncioService: AnuncioService){ }
 
   ngOnInit() {
     this.getAnuncios();
   }
+/* ------------------------ Crear anuncio con imagen ------------------------ */
+crearAnuncioImagen() {
+  this.anuncioService.crearAnuncio(this.nuevoAnuncio).subscribe(
+    response => {
+      console.log(response);
+      // Lógica adicional después de crear el anuncio
+    },
+    error => {
+      console.error(error);
+    }
+  );
+}
+
 /* ----------------------------- Llamar Anuncios ---------------------------- */
   getAnuncios(){
     this.http.get<any[]>('http://localhost:8080/anuncio/buscar')

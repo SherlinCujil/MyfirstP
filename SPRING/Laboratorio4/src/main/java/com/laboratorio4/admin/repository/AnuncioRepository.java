@@ -13,8 +13,7 @@ import com.laboratorio4.admin.entity.Anuncio;
 
 @Repository("anuncioRepository")
 
-//public interface AnuncioRepository  extends JpaRepository< Anuncio, Integer> {
-public interface AnuncioRepository extends JpaRepository<Anuncio, Long> {
+public interface AnuncioRepository  extends JpaRepository< Anuncio, Integer> {
 
 	public List<Anuncio> findByTextoAndImagen
 	(String texto,String imagen);

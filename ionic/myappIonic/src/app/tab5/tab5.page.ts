@@ -11,45 +11,24 @@ export class Tab5Page {
 
   // usuario:any;
   // usuarios:any = [];
-  usuarioinicio:any={};
+  usuarioinicio: any = {};
+  usuario: any = {};
 
+  constructor(private http: HttpClient) {
 
-  constructor(private http:HttpClient){
-
-    let u = localStorage.getItem("usuario");
-    if(u){
-      this.usuarioinicio = JSON.parse(u);
+    const usuarioString = localStorage.getItem("usuario");
+    if (usuarioString !== null) {
+      this.usuario = JSON.parse(usuarioString);
+    } else {
+      location.href = "/tabs/tab1";
     }
 
-
-    // this.buscarUsuarios();
-    // const usuarioString = localStorage.getItem("usuario");
-    // if (usuarioString !== null) {
-    //     this.usuario = JSON.parse(usuarioString);
-    // } else {
-    //     location.href = "#";
-    // }
   }
 
-  // buscarUsuarios(){
-  //   this.servicioBuscarUsuarios().subscribe(
-  //     (us:any) => this.usuarios = us
-  //   )
-  // }
-
-  // servicioBuscarUsuarios():Observable<any>{
-  //   return this.http.get("http://localhost:8080/administrador/buscar");
-  // }
-
-  // logout() {
-  //   localStorage.removeItem("usuario");
-  //   location.href = "/tabs/tab1";
-  // }
-  
-logout(){
-  localStorage.clear();
-  location.reload();
-}
+  logout() {
+    localStorage.clear();
+    location.reload();
+  }
 
 
 }

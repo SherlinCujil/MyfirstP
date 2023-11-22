@@ -38,19 +38,10 @@ public class AnuncioService {
 		
 	}
 	
-	@PostMapping("/guardar")
-    public ResponseEntity<String> crearAnuncio(@RequestBody Anuncio anuncio) {
-        // 
-        anuncioRepository.save(anuncio);
-        return ResponseEntity.ok("Anuncio creado exitosamente.");
-    }
-	
-	
-	
-	//@DeleteMapping(path="/eliminar/{anuncio}")
-	//public void eliminar(@PathVariable("anuncio") int idanuncio){
-	//	anuncioRepository.deleteById(idanuncio);	
-	//}
+	@DeleteMapping(path="/eliminar/{anuncio}")
+	public void eliminar(@PathVariable("anuncio") int idanuncio){
+		anuncioRepository.deleteById(idanuncio);	
+	}
 
 		
 	@GetMapping(path="/buscar/texto/{texto}/imagen/{imagen}")

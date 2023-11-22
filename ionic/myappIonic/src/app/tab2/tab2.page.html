@@ -28,7 +28,7 @@
         <ion-col>fechaFin</ion-col>
       </ion-row>
       <ion-row *ngFor = "let anuncio of anuncios">
-        <ion-col>{{anuncio.imagen}}</ion-col>
+        <img [src]="anuncio.imagen" alt="Imagen del Anuncio">
         <ion-col>{{anuncio.texto}}</ion-col>
         <ion-col>{{anuncio.fechaInicio}}</ion-col>
         <ion-col>{{anuncio.fechaFin}}</ion-col>

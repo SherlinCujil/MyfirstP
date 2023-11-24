@@ -9,6 +9,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 import jakarta.persistence.Table;
 
 @Entity
@@ -37,10 +38,10 @@ public class Anuncio implements Serializable {
 	
 	
 	
-	@Column (name="texto")
+	@Lob
 	private String texto;
 	
-	@Column(name="imagen")
+	@Lob
 	private String imagen;
 	
 	@Column(name="fechaInicio")
@@ -56,6 +57,7 @@ public class Anuncio implements Serializable {
 	public void setIdanuncio(int idanuncio) {
 		this.idanuncio = idanuncio;
 	}
+
 
 	public String getTexto() {
 		return texto;

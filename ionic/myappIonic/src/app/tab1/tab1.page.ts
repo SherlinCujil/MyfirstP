@@ -65,6 +65,7 @@ export class Tab1Page {
     }
     return this.http.post<any>("http://localhost:8080/usuario/login", 
     this.usuario, httpOptions);
+
   }
 
   /* ------------------------------ Crear Cuenta ------------------------------ */
@@ -102,14 +103,4 @@ export class Tab1Page {
     }
     return this.http.post<any>("http://localhost:8080/usuario/guardar", this.usuario, httpOptions);
   }
-
-
-
-
-
-
-
-
-
-
 }

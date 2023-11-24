@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- ---------------------------- Crear tipos anuncios ---------------------------- -->
+<h1> Tipo de Anuncios</h1>
+<hr>
+
+<form (ngSubmit)="crearTipo()">
+    <div class="mb-3 form-group">
+        <label class="form-label">descripcion: *</label>
+        <input type="text" class="form-control" [(ngModel)]="tipo.nombre" [ngModelOptions]="{standalone:true}"
+            required>
+
+           
+    <button type="submit" class="btn btn-outline-success float-end">Guardar</button>
+
+
+<br>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">idtipo_anuncio</th>
+            <th scope="col">descripcion/th>
+           </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let tipos of tipos">
+            <th scope="row">{{tipos.idtipo_anuncio}}</th>
+             <td>{{tipos.descripcion}}</td>
+              <td><button class="btn btn-outline-primary" (click)="modificar(tipos)">Modificar</button>
+                &nbsp;
+                <button class="btn btn-outline-warning" (click)="eliminar(tipos.idtipos_anuncios)">Eliminar</button>
+            </td>
+        </tr>
+
+    </tbody>
+</table>
+
+<button type="submit" class="btn btn-outline-success float-end">
+    <a href="/bienvenida">Regresar</a>
+</button>

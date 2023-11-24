@@ -8,6 +8,8 @@ import { LugaresComponent } from './lugares/lugares.component';
 import { ViajesComponent } from './viajes/viajes.component';
 import { MiperfilComponent } from './miperfil/miperfil.component';
 import { ReservasComponent } from './reservas/reservas.component';
+import { TiposanunciosComponent } from './tiposanuncios/tiposanuncios.component';
+
 
 const routes: Routes = [
 
@@ -18,9 +20,9 @@ const routes: Routes = [
 { path:'lugares',component:LugaresComponent},
 { path:'viajes',component:ViajesComponent},
 { path:'miperfil',component:MiperfilComponent},
-{path: 'reservas',component:ReservasComponent},
+{ path:'reservas',component:ReservasComponent},
+{ path:'tiposanuncios', component:TiposanunciosComponent},
 { path:'**',component:LoginComponent},
-
 
 ];
 
